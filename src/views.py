@@ -1,13 +1,11 @@
-import datetime
 import json
 from src.utils import (get_greeting, get_card_info, get_top_transactions,
                        get_stock_prices, get_currency_rate)
 
 
-
 def generate_json_response(date_time_str, transactions):
     """Функция генерации JSON-ответа"""
-    date_time = datetime.datetime.strptime(date_time_str, "%Y-%m-%d %H:%M:%S")
+    # date_time = datetime.datetime.strptime(date_time_str, "%Y-%m-%d %H:%M:%S")
     greeting = get_greeting()
 
     cards = {}
@@ -39,5 +37,3 @@ def generate_json_response(date_time_str, transactions):
     }
 
     return response
-
-

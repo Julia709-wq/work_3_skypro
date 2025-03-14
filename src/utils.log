@@ -1,0 +1,24 @@
+2025-03-14 21:41:48,520 - utils.py - INFO: Reading data from file
+2025-03-14 21:41:49,789 - utils.py - INFO: Greeting the user
+2025-03-14 21:41:49,791 - utils.py - INFO: Getting information about user's cards
+2025-03-14 21:41:49,793 - utils.py - INFO: Getting information about user's cards
+2025-03-14 21:41:49,793 - utils.py - INFO: Getting information about user's cards
+2025-03-14 21:41:49,793 - utils.py - INFO: Getting information about user's cards
+2025-03-14 21:41:49,793 - utils.py - INFO: Getting information about user's cards
+2025-03-14 21:41:49,793 - utils.py - INFO: Getting information about user's cards
+2025-03-14 21:41:49,793 - utils.py - INFO: Getting information about user's cards
+2025-03-14 21:41:49,793 - utils.py - INFO: Getting information about user's cards
+2025-03-14 21:41:49,793 - utils.py - INFO: Counting total expenses
+2025-03-14 21:41:49,794 - utils.py - INFO: Sorting transactions
+2025-03-14 21:41:49,795 - utils.py - INFO: Requesting information on currency rates from API-server
+2025-03-14 21:41:50,132 - utils.py - INFO: Getting response from API-server
+2025-03-14 21:41:50,134 - utils.py - INFO: Requesting information on stocks rates from API-server
+2025-03-14 21:41:50,478 - utils.py - INFO: Getting response from API-server
+2025-03-14 21:41:50,479 - utils.py - INFO: Requesting information on stocks rates from API-server
+2025-03-14 21:41:51,026 - utils.py - INFO: Getting response from API-server
+2025-03-14 21:41:51,026 - utils.py - INFO: Requesting information on stocks rates from API-server
+2025-03-14 21:41:51,356 - utils.py - INFO: Getting response from API-server
+2025-03-14 21:41:51,356 - utils.py - INFO: Requesting information on stocks rates from API-server
+2025-03-14 21:41:51,929 - utils.py - INFO: Getting response from API-server
+2025-03-14 21:41:51,929 - utils.py - INFO: Requesting information on stocks rates from API-server
+2025-03-14 21:41:52,250 - utils.py - INFO: Getting response from API-server

@@ -2,9 +2,16 @@ import pandas as pd
 from datetime import datetime, timedelta
 from functools import wraps
 from src.utils import read_data_from_file
+import logging
+
+logger = logging.getLogger('reports')
+logger.setLevel(logging.INFO)
+file_handler = logging.FileHandler('reports.log', mode='w')
+file_formatter = logging.Formatter('%(asctime)s - %(filename)s - %(levelname)s: %(message)s')
+file_handler.setFormatter(file_formatter)
+logger.addHandler(file_handler)
 
 
-# Декоратор для записи результата в файл
 def report_decorator(filename=None):
     def decorator(func):
         @wraps(func)
@@ -27,22 +34,29 @@ def report_decorator(filename=None):
 def generate_report(df, category, target_date=None):
     """Функция возвращает траты по заданной категории за последние три месяца"""
 
-    if target_date is None:
-        target_date = datetime.now()
+    try:
+        logger.info("Checking for target_date")
+        if target_date is None:
+            logger.info("Setting target_date as current")
+            target_date = datetime.now()
 
-    if isinstance(target_date, str):
-        target_date = datetime.strptime(target_date, "%Y-%m-%d")
+        if isinstance(target_date, str):
+            logger.info("Changing target_date's type to datetime")
+            target_date = datetime.strptime(target_date, "%Y-%m-%d")
 
-    start_date = target_date - timedelta(days=90)
+        start_date = target_date - timedelta(days=90)
 
+        logger.info("Filtering the DataFrame")
+        filtered_df = df[(df["Категория"] == category) &
+                         (df["Дата операции"] >= start_date) &
+                         (df["Дата операции"] <= target_date)]
 
-    filtered_df = df[(df["Категория"] == category) &
-                     (df["Дата операции"] >= start_date) &
-                     (df["Дата операции"] <= target_date)]
+        total_spent = filtered_df["Сумма операции"].abs().sum()
 
-    total_spent = filtered_df["Сумма операции"].abs().sum()
+        return f"Траты по категории '{category}' за последние три месяца: {total_spent} RUB"
 
-    return f"Траты по категории '{category}' за последние три месяца: {total_spent} RUB"
+    except Exception as ex:
+        logger.error(f"An error occurred: {ex}")
 
 
 if __name__ == "__main__":
