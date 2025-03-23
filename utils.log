@@ -1,0 +1,18 @@
+2025-03-23 14:49:54,158 - utils.py - INFO: Reading data from file
+2025-03-23 14:49:54,169 - utils.py - INFO: Greeting the user
+2025-03-23 14:49:54,171 - utils.py - INFO: Greeting the user
+2025-03-23 14:49:54,174 - utils.py - INFO: Greeting the user
+2025-03-23 14:49:54,177 - utils.py - INFO: Greeting the user
+2025-03-23 14:49:54,180 - utils.py - INFO: Getting information about user's cards
+2025-03-23 14:49:54,182 - utils.py - INFO: Getting information about user's cards
+2025-03-23 14:49:54,182 - utils.py - ERROR: An error occurred: list index out of range
+2025-03-23 14:49:54,184 - utils.py - INFO: Counting total expenses
+2025-03-23 14:49:54,184 - utils.py - INFO: Sorting transactions
+2025-03-23 14:49:54,186 - utils.py - INFO: Counting total expenses
+2025-03-23 14:49:54,187 - utils.py - INFO: Sorting transactions
+2025-03-23 14:49:54,189 - utils.py - INFO: Requesting information on currency rates from API-server
+2025-03-23 14:49:54,189 - utils.py - INFO: Getting response from API-server
+2025-03-23 14:49:54,191 - utils.py - INFO: Requesting information on stocks rates from API-server
+2025-03-23 14:49:54,192 - utils.py - INFO: Getting response from API-server
+2025-03-23 14:49:54,192 - utils.py - INFO: Requesting information on stocks rates from API-server
+2025-03-23 14:49:54,192 - utils.py - INFO: Getting response from API-server
