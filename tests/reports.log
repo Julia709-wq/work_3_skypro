@@ -1,0 +1,9 @@
+2025-03-26 01:28:29,656 - reports.py - INFO: Checking for target_date
+2025-03-26 01:28:29,656 - reports.py - INFO: Changing target_date's type to datetime
+2025-03-26 01:28:29,658 - reports.py - INFO: Filtering the DataFrame
+2025-03-26 01:28:29,664 - reports.py - INFO: Checking for target_date
+2025-03-26 01:28:29,664 - reports.py - INFO: Changing target_date's type to datetime
+2025-03-26 01:28:29,665 - reports.py - INFO: Filtering the DataFrame
+2025-03-26 01:28:29,669 - reports.py - INFO: Checking for target_date
+2025-03-26 01:28:29,669 - reports.py - INFO: Setting target_date as current
+2025-03-26 01:28:29,670 - reports.py - INFO: Filtering the DataFrame

@@ -40,9 +40,12 @@ def generate_report(df, category, target_date=None):
             logger.info("Setting target_date as current")
             target_date = datetime.now()
 
-        if isinstance(target_date, str):
+        elif isinstance(target_date, str):
             logger.info("Changing target_date's type to datetime")
             target_date = datetime.strptime(target_date, "%Y-%m-%d")
+
+        df = df.copy()
+        df["Дата операции"] = pd.to_datetime(df["Дата операции"], format="%Y-%m-%d")
 
         start_date = target_date - timedelta(days=90)
 
@@ -57,6 +60,7 @@ def generate_report(df, category, target_date=None):
 
     except Exception as ex:
         logger.error(f"An error occurred: {ex}")
+        return f"Возникла ошибка: {ex}"
 
 
 if __name__ == "__main__":
