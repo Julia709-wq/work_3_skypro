@@ -1,5 +1,6 @@
 from unittest.mock import patch, Mock
 import pandas as pd
+import pytest
 from datetime import datetime
 from src.utils import (read_data_from_file, get_greeting, get_card_info,
                        get_top_transactions, get_currency_rate, get_stock_prices)
@@ -32,10 +33,28 @@ def test_read_data_from_file(mock_read_excel):
 
 
 @patch('src.utils.datetime')
-def test_get_greeting(mock_datetime):
+def test_get_greeting_morning(mock_datetime):
     mock_datetime.now.return_value = datetime(2023, 10, 15, 8, 0, 0)
     result = get_greeting()
     assert result == "Доброе утро"
+
+@patch('src.utils.datetime')
+def test_get_greeting_afternoon(mock_datetime):
+    mock_datetime.now.return_value = datetime(2023, 10, 15, 14, 0, 0)
+    result = get_greeting()
+    assert result == "Добрый день"
+
+@patch('src.utils.datetime')
+def test_get_greeting_evening(mock_datetime):
+    mock_datetime.now.return_value = datetime(2023, 10, 15, 20, 0, 0)
+    result = get_greeting()
+    assert result == "Добрый вечер"
+
+@patch('src.utils.datetime')
+def test_get_greeting_night(mock_datetime):
+    mock_datetime.now.return_value = datetime(2023, 10, 15, 3, 0, 0)
+    result = get_greeting()
+    assert result == "Доброй ночи"
 
 
 def test_get_card_info():
@@ -50,6 +69,11 @@ def test_get_card_info():
             "cashback": 18
         }
     assert result == expected_result
+
+
+def test_get_card_info_empty_transactions():
+    transactions = []
+    assert get_card_info(transactions) == None
 
 
 def test_get_top_transactions():
@@ -70,6 +94,9 @@ def test_get_top_transactions():
     result = get_top_transactions(transactions, top_n=3)
     assert result == expected_result
 
+def test_get_top_transactions_empty_list():
+    transactions = []
+    assert get_top_transactions(transactions) == []
 
 @patch('requests.get')
 def test_get_currency_rate(mock_get):
